@@ -18,4 +18,3 @@ friends_num_of_pets = [["James", 1], ["Michael", 18], ["Mark", 3]]
 # puts friends_num_of_pets.flatten
 # #Returns a new array that is a one-dimensional flattening of +self+(recursively).
 
-friends_num_of_pets.each {|item| puts "Hello", item }.flatten
