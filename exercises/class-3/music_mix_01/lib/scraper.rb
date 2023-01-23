@@ -13,7 +13,8 @@ class Scraper
     puts "Fetching Hits..."
 
     doc = Nokogiri::HTML(URI.open("#{URL}#{genre}/tracks"))
-    top_hits = doc.css(".chartlist-name a", ".chartlist-artist a" )
+    top_hits = doc.css(".chartlist-name a")
+    #  ".chartlist-artist a"
     top_hits.each_with_index do |hit, i| 
       puts "#{i+1}. #{hit.text}"
 
@@ -27,16 +28,16 @@ class Scraper
     puts "Fetching Top Albums..."
 
     doc = Nokogiri::HTML(URI.open("#{URL}#{genre}/albums"))
-    album_artist = doc.css(".resource-list--release-list-item-artist").css("span").css("a") 
+    # album_artist = doc.css(".resource-list--release-list-item-artist").css("span").css("a") 
     album_name = doc.css(".resource-list--release-list-item-name a")
     # puts album_artist
     # puts album_name
-    top_albums = "#{album_name}, #{album_artist}"
-    puts top_albums
+    top_albums = album_name
+    # puts top_albums
     # doc.css( ".resource-list--release-list-item-name a" ,".resource-list--release-list-item-artist a")
     # doc.css(".class-of-the-paragraph").css('span').css('a')
-    top_albums.each do |album|
-      puts album.text
+    top_albums.each_with_index do |album, i|
+      puts "#{i+1}. #{album.text}" 
     end
   end
 
