@@ -1,0 +1,10 @@
+<h1>Job Board</h1>
+<ul>
+  <% @jobs.each do |job| %>
+    <li>
+      <h3><%= job[:company] %></h3>
+      <p>Position: <%= job[:position] %></p>
+      <p>Location: <%= job[:location] %></p>
+    </li>
+  <% end %>
+</ul>
