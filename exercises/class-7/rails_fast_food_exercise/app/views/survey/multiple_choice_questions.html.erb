@@ -1,0 +1,9 @@
+<%= form_tag(survey_open_ended_feedback_path) do %>
+  <p>Rate the quality of your experience:</p>
+  <%= text_field_tag :quality_rating %>
+  <%= submit_tag "Submit" %>
+
+  <p>How likely are you to recommend to a friend:</p>
+  <%= text_field_tag :recommendation_rating %>
+  <%= submit_tag "Submit" %>
+<% end %>
