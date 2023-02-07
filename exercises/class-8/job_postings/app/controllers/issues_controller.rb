@@ -6,4 +6,8 @@ class IssuesController < ApplicationController
       @issues = Issue.all
     end
   end
+
+  def remote_jobs_list
+    @remote_jobs = Issue.where(location: "Remote")
+  end
 end

@@ -1,0 +1,8 @@
+<h1>Remote Job Listings</h1>
+<ul>
+  <% @remote_jobs.each do |remote_job| %>
+    <li>
+      <%= remote_job.title %> - <%= remote_job.company %> - <%= remote_job.salary %>
+    </li>
+  <% end %>
+</ul>

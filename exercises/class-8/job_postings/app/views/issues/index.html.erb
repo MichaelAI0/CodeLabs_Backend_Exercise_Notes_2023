@@ -4,7 +4,7 @@
   <%= text_field_tag :search %>
   <%= submit_tag "Search" %>
 <% end %>
-
+<%= link_to "Remote Jobs", remote_jobs_list_issues_path %>
 <ul>
   <% @issues.each do |issue| %>
     <li>

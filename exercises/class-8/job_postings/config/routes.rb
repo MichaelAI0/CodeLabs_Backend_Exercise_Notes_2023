@@ -5,6 +5,9 @@ Rails.application.routes.draw do
   # root "articles#index"
   
   root "issues#index"
-  get '/issues', to: 'issues#index'
-  resources :issues
+  resources :issues do
+    collection do
+      get 'remote_jobs_list'
+    end
+  end
 end
