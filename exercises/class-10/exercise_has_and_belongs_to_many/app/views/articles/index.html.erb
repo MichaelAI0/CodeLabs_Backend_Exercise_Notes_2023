@@ -1,0 +1,24 @@
+<h1>All Articles</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Content</th>
+      <th>Tags</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @articles.each do |article| %>
+      <tr>
+        <td><%= article.title %></td>
+        <td><%= article.content %></td>
+        <td>
+          <% article.tags.each do |tag| %>
+            <%= tag.name %>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= link_to 'New Article', new_article_path %>

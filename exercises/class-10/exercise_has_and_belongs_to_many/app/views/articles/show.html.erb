@@ -1,0 +1,19 @@
+<h1><%= @article.title %></h1>
+<p><%= @article.content %></p>
+<h2>Tags:</h2>
+<ul>
+  <% @article.tags.each do |tag| %>
+    <li><%= tag.name %></li>
+  <% end %>
+</ul>
+<h2>Comments:</h2>
+<% if @article.comments.any? %>
+  <ul>
+    <% @article.comments.each do |comment| %>
+      <li><%= comment.content %></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>No comments yet</p>
+<% end %>
+<%= link_to 'New Comment', new_comment_path(article_id: @article.id) %>
