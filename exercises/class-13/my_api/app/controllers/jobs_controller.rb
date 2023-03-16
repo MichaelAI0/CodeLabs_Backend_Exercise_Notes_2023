@@ -1,7 +1,7 @@
 class JobsController < ApplicationController
   def index
     jobs = Job.all
-    render json: jobs
+    render json: jobs, status: :ok 
   end
 
   def show
@@ -37,6 +37,6 @@ class JobsController < ApplicationController
   private
 
   def job_params
-    params.require(:job).permit(:job_description, :job_type, :qualifications)
+    params.require(:job).permit(:name, :posting, :job_desc, :qualifications)
   end
 end
